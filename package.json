@@ -1,0 +1,35 @@
+{
+  "name": "steamer-core",
+  "version": "0.0.1",
+  "description": "steamer-core",
+  "main": "index.js",
+  "scripts": {
+    
+  },
+  "bin": {
+    
+  },
+  "files": [
+    "libs",
+    "template"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SteamerTeam/steamer-core.git"
+  },
+  "keywords": [
+    "steamer"
+  ],
+  "author": "SteamerTeam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SteamerTeam/steamer-core/issues"
+  },
+  "homepage": "https://github.com/SteamerTeam/steamer-core#readme",
+  "dependencies": {
+    "colors": "^1.1.2"
+  },
+  "devDependencies": {
+    "jasmine": "^2.4.0"
+  }
+}
