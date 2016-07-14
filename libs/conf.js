@@ -18,14 +18,14 @@ module.exports = {
 		if (!fs.existsSync(GlobalConfPath)) {
 			return null;
 		}
-		let GlobalConf = JSON.parse(fs.readFileSync(GlobalConfPath).toString());
+		let GlobalConf = require(GlobalConfPath);
 		return GlobalConf;
 	},
 	local: function() {
 		if (!fs.existsSync(LocalConfPath)) {
 			return null;
 		}
-		let LocalConf = JSON.parse(fs.readFileSync(LocalConfPath).toString());
+		let LocalConf = require(LocalConfPath);
 		return LocalConf;
 	},
 	default: function() {
@@ -44,7 +44,7 @@ module.exports = {
 	},
 	write: function(confPath, conf) {
 		if (fs.existsSync(confPath)) {
-			fs.writeFileSync(confPath, JSON.stringify(conf, null, 4));
+			fs.writeFileSync(confPath, "module.exports = " + JSON.stringify(conf, null, 4) + ";");
 		}
 	},
 	globalPath: function() {

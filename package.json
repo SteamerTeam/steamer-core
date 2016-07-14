@@ -11,7 +11,7 @@
   },
   "files": [
     "libs",
-    "template"
+    "conf"
   ],
   "repository": {
     "type": "git",

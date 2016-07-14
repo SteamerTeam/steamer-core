@@ -31,4 +31,12 @@ module.exports = {
 		let msg = folder + " not exists";
 		throw new Err(msg);
 	},
+	PkgNotFound: function(pkg) {
+		let msg = pkg + " not found";
+		throw new Err(msg);
+	},
+	PluginNotFond: function(plugin) {
+		let msg = plugin + " not found";
+		throw new Err(msg);
+	}
 };
