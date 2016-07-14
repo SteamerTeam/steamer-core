@@ -1,6 +1,6 @@
 {
-	"http-proxy": "",
-	"https-proxy": "",
-	"team": "",
-	"plugins": []
+    "http-proxy": "",
+    "https-proxy": "",
+    "team": "alloyteam",
+    "plugins": []
 }

@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Error and Warning
  * by heyli 2016.06.23
@@ -5,20 +6,29 @@
 
 var log = require('./log');
 
+function Err(msg) {
+	log.error(msg);
+}
+
 module.exports = {
 	ConfigMissing: function(conf) {
-		log.error(conf + " is missing or " + conf + " is empty");
+		let msg = conf + " is missing or " + conf + " is empty";
+		throw new Err(msg);
 	},
 	FileExistErr: function(file) {
-		log.error(file + " has existed");
+		let msg = file + " has existed";
+		throw new Err(msg);
 	},
 	FileNotExistErr: function(file) {
-		log.error(file + " not exists");
+		let msg = file + " not exists";
+		throw new Err(msg);
 	},
 	FolderExistErr: function(folder) {
-		log.error(folder + " has existed");
+		let msg = folder + " has existed";
+		throw new Err(msg);
 	},
 	FolderNotExistErr: function(folder) {
-		log.error(folder + " not exists");
+		let msg = folder + " not exists";
+		throw new Err(msg);
 	},
 };

@@ -31,11 +31,32 @@ module.exports = {
 	default: function() {
 		let conf = this.local() || this.global();
 
-		argv.g && argv.global && (conf = this.global());
+		(argv.g || argv.global) && (conf = this.global());
 
 		return conf;
 	},
-	write: function() {
-		
+	defaultPath: function() {
+		let confPath = this.localPath() || this.globalPath();
+
+		(argv.g || argv.global) && (confPath = this.globalPath());
+
+		return confPath;
+	},
+	write: function(confPath, conf) {
+		if (fs.existsSync(confPath)) {
+			fs.writeFileSync(confPath, JSON.stringify(conf, null, 4));
+		}
+	},
+	globalPath: function() {
+		if (!fs.existsSync(GlobalConfPath)) {
+			return null;
+		}
+		return GlobalConfPath;
+	},
+	localPath: function() {
+		if (!fs.existsSync(LocalConfPath)) {
+			return null;
+		}
+		return LocalConfPath;
 	}
 };

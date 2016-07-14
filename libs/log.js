@@ -13,6 +13,6 @@ module.exports = {
 		console.log(msg['red']);
 	},
 	info: function(msg) {
-		console.log(msg['blue']);
+		console.log(msg['yellow']);
 	}
 };
